@@ -8,7 +8,7 @@ interface Post {
   description: string;
 }
 
-const FetchButton: React.FC = () => {
+const GetPosts: React.FC = () => {
   const [data, setData] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: '#FFFF',
     borderRadius: 8,
-    width: '40%',
+    width: '100%',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -81,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FetchButton;
+export default GetPosts;

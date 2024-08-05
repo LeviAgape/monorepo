@@ -1,18 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import FetchButton from './apps/packages/ui/src/ButtonHeader';
-import CreatePost from './apps/packages/layout/src/CreatePost';
-
+import GetPosts from './packages/layout/src/GetPosts';
+import GetMembers from './packages/layout/src/GetMembers';
 export default function App() {
   return (
     <View style={styles.wrapper}>
       <ScrollView contentContainerStyle={styles.container}>
-        <Text style={styles.headerText}>Open up App.tsx to start working on your app!</Text>
-        <View style={styles.containerPost}>
-          <CreatePost />
-        </View>
+        <Text style={styles.headerText}>Veja as nossas listas!</Text>
+      
         <View style={styles.containerForm}>
-          <FetchButton />
+          <GetPosts />
+        </View>
+        <View style={styles.containerMembers}>
+          <GetMembers/>
         </View>
       </ScrollView>
       <StatusBar style="auto" />
@@ -22,13 +22,13 @@ export default function App() {
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 1, // Ensures the wrapper takes up the full height of the screen
+    flex: 1, 
   },
   container: {
     flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#421D86', // Background color for the entire scrollable content
+    backgroundColor: '#421D86',
     padding: 16,
   },
   containerPost: {
@@ -40,4 +40,8 @@ const styles = StyleSheet.create({
   headerText: {
     marginBottom: 16,
   },
+  containerMembers: {
+    flex: 1,
+    width: '30%'
+  }
 });
